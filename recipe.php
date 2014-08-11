@@ -1,6 +1,6 @@
 <?php
-// ファイル名
-$filename = 'recipe-data.txt';
+//読み込みファイルを外部から指定する
+$filename = $argv['1'];
 
 // ファイルの存在チェック
 if (!file_exists($filename)) {
@@ -12,6 +12,6 @@ if (!file_exists($filename)) {
 if (! ($recipe_data = file_get_contents($filename))) {
    echo "ファイルが開けません。";
 }
-   
+
 // 出力
 echo $recipe_data;
